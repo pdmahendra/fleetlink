@@ -9,9 +9,17 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+const allowedOrigins = process.env.CORS_ORIGINS?.split(",") || [];
+
 app.use(
   cors({
-    origin: [process.env.CORS_ORIGIN_LOCAL, process.env.CORS_ORIGIN_PRODUCTION],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS not allowed from this origin: " + origin));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
