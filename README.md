@@ -63,12 +63,16 @@ cd backend
 npm install
 npm run dev
 
-Environment Variables
+Environment Variables backend
 Create a .env file inside the backend/ folder:
 PORT=3001
 MONGODB_URI=your_mongodb_connection_string
 NODE_ENV="production"
+CORS_ORIGINS=""
 
+Environment Variables frontend
+Create a .env file inside the frontend/ folder:
+VITE_API_BASE_URL=""
 
 ## 📈 Future Improvements
 
