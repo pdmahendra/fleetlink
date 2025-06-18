@@ -36,6 +36,7 @@ const BookVehicle = () => {
   };
 
   const handleBook = (vehicleId: string) => {
+    console.log("booking button clicked")
     const result = bookingSchema.safeParse(formData);
 
     if (!result.success) {
