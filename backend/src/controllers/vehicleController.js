@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
 import Vehicle from "../models/vehicleModel.js";
 import Booking from "../models/bookingModel.js";
-import { calculateRideDuration } from "../utils/calculateRideDuration.js";
+import { calculateRideDuration } from "../utils/calculateRIdeDuration.js";
 import ApiError from "../utils/apiError.js";
 
 export const addVehicle = asyncHandler(async (req, res) => {
